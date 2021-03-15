@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class main extends UserMainCode {
+	public static void main(String args[]) {
+		UserMainCode m = new main();
+		Scanner s = new Scanner(System.in);
+		String b = s.nextLine();
+		getMiddleChars(b);
+	}
+}
+
+class UserMainCode {
+	static String getMiddleChars(String a) {
+		StringBuffer sb = new StringBuffer();
+		if (a.length() % 2 == 0) {
+			sb.append(a.substring(a.length() / 2 - 1, a.length() / 2 + 1));
+			System.out.println(sb.toString());
+		}
+		return sb.toString();
+	}
+}

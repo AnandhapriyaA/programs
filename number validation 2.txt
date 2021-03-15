@@ -1,0 +1,22 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.Scanner;
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String text = scan.nextLine();
+		checksum(text);
+	}
+}
+class UserMainCode {
+	static String checksum(String string) {
+		Pattern pattern = Pattern.compile("[0-9]{3}[-][0-9]{3}[-][0-9]{4}");
+		Matcher match = pattern.matcher(string);
+		boolean result = match.matches();
+		if (result == true)
+			System.out.println("Valid number format");
+		else
+			System.out.println("InValid number format");
+		return string;
+	}
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class main extends UserMainCode {
+	public static void main(String args[]) {
+		UserMainCode m = new main();
+		Scanner s = new Scanner(System.in);
+		String b = s.nextLine();
+		int a = Integer.parseInt(b);
+		CheckSum(a);
+	}
+}
+
+class UserMainCode {
+	static int CheckSum(int a) {
+		int sum = 0;
+		while (a > 0) {
+			sum = sum + a % 10;
+			a = a / 10;
+		}
+		if (sum % 2 != 0) {
+			System.out.println("Sum of odd digits is odd");
+			return 1;
+		} else {
+			System.out.println("Sum of odd digits is even");
+			return -1;
+		}
+	}
+}
+}
